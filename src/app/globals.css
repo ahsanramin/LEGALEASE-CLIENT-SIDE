@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "swiper/css";
+
+:root {
+  --background: #f9fafb;
+  --foreground: #111827;
+  --chart-grid-stroke: #e5e7eb;
+  --chart-tick-color: #6b7280;
+}
+
+.dark {
+  --background: #0f1115;
+  --foreground: #f3f4f6;
+  --chart-grid-stroke: #374151;
+  --chart-tick-color: #9ca3af;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+}
