@@ -22,7 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true);
-    const storedTheme = localStorage.getItem('theme') || 'dark';
+    const storedTheme = localStorage.getItem('theme') || 'light';
     setIsDark(storedTheme === 'dark');
     if (storedTheme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -117,7 +117,6 @@ export default function Navbar() {
               </Link>
               {user && (
                 <div className="relative" ref={dropdownRef}>
-                  {/* 🔥 Dashboard লিংক: টেক্সটে ক্লিক করলে রিডাইরেক্ট হবে, আইকনে ক্লিক করলে ড্রপডাউন ওপেন হবে */}
                   <Link
                     href={`/dashboard/${user.role}`}
                     className={`flex items-center gap-1 text-sm font-medium transition-colors ${isActive(`/dashboard/${user.role}`) ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'}`}
