@@ -33,7 +33,7 @@
 
 ✅ **Role-Based Dynamic Navigation (RBAC):** `Navbar` and `Sidebar` components automatically reconfigure visible links and dropdowns based on the authenticated user's role (`admin`, `lawyer`, `user`).
 ✅ **Smart Authentication UI:** Fully integrated Email/Password forms alongside Google OAuth (`@react-oauth/google`), utilizing JWT for stateless session management.
-✅ **Figma-Grade Payment Checkout:** A deeply polished, dark-mode Stripe Checkout UI that seamlessly transitions between Lawer publishing fees (`$10,000`) and Client consultation fees.
+✅ **Figma-Grade Payment Checkout:** A deeply polished, dark-mode Stripe Checkout UI that seamlessly transitions between Lawyer publishing fees (`$10,000`) and Client consultation fees.
 ✅ **Advanced Filtering & Pagination:** A robust `Browse Lawyers` system allowing dynamic search (Name/Specialty), min/max fee range, and availability filtering with a customized ellipsis pagination logic (`1 2 3 ... 42`).
 ✅ **High-Performance Animation Engine:** Leverages `framer-motion` for staggered grid reveals, smooth modal transitions, and interactive hover scaling.
 ✅ **Comprehensive Role-Specific Dashboards:** Fully dedicated, responsive modules for Users (Hiring History & Payments), Lawyers (Hiring Request Accept/Reject & Profile Management), and Admins (User Management & Analytics).
@@ -47,15 +47,15 @@ The `LegalEase` client follows a robust **Server-Side Rendering (SSR)** and **Cl
 
 ```mermaid
 graph TD
-    A[User Browser] --> B{Next.js Middleware};
-    B -- "Protected Route & Auth Check" --> C[Client App (Turbopack)];
-    C -- "API Request (Axios + JWT)" --> D[Vercel Serverless API];
+    A["User Browser"] --> B["Next.js Middleware"];
+    B -- "Protected Route & Auth Check" --> C["Client App (Turbopack)"];
+    C -- "API Request (Axios + JWT)" --> D["Vercel Serverless API"];
     D -- "Mongoose ODM" --> E[(MongoDB Atlas)];
     E -- "Data Response" --> D;
     D -- "JSON Response" --> C;
-    C -- "Framer Motion/React DOM" --> F[Dynamic UI Rendering];
+    C -- "Framer Motion/React DOM" --> F["Dynamic UI Rendering"];
     
     subgraph "Security Layer"
         B
-        C -- "AuthContext" --> G[LocalStorage JWT & User State]
+        C -- "AuthContext" --> G["LocalStorage JWT & User State"]
     end
